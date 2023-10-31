@@ -1,0 +1,102 @@
+/* Root elements */
+:root {
+    --midnight-blue: #145DA0;
+    --dark-blue: #0C2D48;
+    --blue: #2E8BC0;
+    --baby-blue: #B1D4E0;
+    --turq-blue: #18778C;
+    --turq-blue-dark: #125b6b;
+}
+
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
+
+body {
+    font-family: 'Questrial', sans-serif !important;
+    height: 100vh !important;
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    background-color: var(--turq-blue);
+    color: var(--turq-blue) !important;
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+    font-family: 'Megrim', cursive !important;
+} */
+
+/* Font classes */
+.megrim-font {
+    font-family: 'Megrim', cursive !important;
+}
+
+.questrial-font {
+    font-family: 'Questrial', sans-serif !important;
+}
+
+.caeser-dressing-font {
+    font-family: 'Caesar Dressing', cursive !important;
+}
+
+/* ./ Font Classes */
+
+.navigation-bar-mystyle {
+    background-color: #fff !important;
+    color: var(--dark-blue);
+}
+
+.footer-mystyle {
+    background-color: #fff !important;
+    color: var(--dark-blue);
+}
+
+.offcanvas-sidebar-toggle-btn {
+    background-color: var(--turq-blue) !important;
+    color: #fff !important;
+}
+
+.offcanvas-sidebar-close-btn {
+    background-color: #fff !important;
+    color: var(--turq-blue) !important;
+}
+
+.btn-white-mystyle {
+    background-color: #fff !important;
+    color: var(--turq-blue) !important;
+}
+
+.bg-turq-blue {
+    background-color: var(--turq-blue) !important;
+    color: #fff !important;
+}
+
+/* Page headers */
+.page-header-home {
+    height: 100vh !important;
+    width: 100% !important;
+    background: url("../media/assets/gallery/pexels-tima-miroshnichenko-6873123.jpg");
+    background-position: center left;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.page-header-about {
+    height: 100vh !important;
+    width: 100% !important;
+    background: url("../media/assets/gallery/pexels-tima-miroshnichenko-6872594.jpg");
+    background-position: center right;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.page-header-contact {
+    height: 100vh !important;
+    width: 100% !important;
+    background: url("../media/assets/gallery/pexels-markus-spiske-1729993.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.restrict-height-img {
+    max-height: 500px !important;
+}
