@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  /* Racing Typography */
+  --font-technical: "JetBrains Mono", monospace;
+  --font-brand: "Caesar Dressing", system-ui;
+  --font-heading: "Questrial", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* High-Performance Palette */
+  --color-racing-orange: #FF4D00;
+  --color-racing-red: #E60000;
+  --color-matte-black: #0A0A0A;
+  --color-carbon-gray: #1A1A1A;
+  --color-telemetry-white: #E0E0E0;
+  --color-dim-gray: #4D4D4D;
+}
+
+@layer base {
+  body {
+    @apply bg-matte-black text-telemetry-white font-body antialiased selection:bg-racing-orange selection:text-white;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading uppercase italic tracking-tighter;
+  }
+}
+
+@layer components {
+  /* Bento Grid Layout */
+  .bento-grid {
+    @apply grid grid-cols-1 md:grid-cols-4 md:grid-rows-6 gap-4 min-h-[800px];
+  }
+
+  /* Asymmetrical Racing Cell */
+  .racing-cell {
+    @apply bg-carbon-gray border border-dim-gray/40 relative overflow-hidden transition-all duration-300;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+  }
+
+  .racing-cell::before {
+    content: "";
+    @apply absolute top-0 left-0 w-1 h-full bg-racing-orange opacity-0 transition-opacity duration-300;
+  }
+
+  .racing-cell:hover {
+    @apply border-racing-orange shadow-[0_0_15px_rgba(255,77,0,0.1)];
+  }
+
+  .racing-cell:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Buttons: Pit Stop Style */
+  .btn-racing {
+    @apply px-6 py-3 font-heading uppercase italic font-bold tracking-widest transition-all duration-300 border-2 relative overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply bg-racing-orange border-racing-orange text-white hover:bg-transparent hover:text-racing-orange;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-telemetry-white text-telemetry-white hover:border-racing-orange hover:text-racing-orange;
+  }
+
+  /* Typography Accents */
+  .telemetry-data {
+    @apply font-technical text-dim-gray text-[10px] uppercase tracking-widest;
+  }
+
+  .accent-line {
+    @apply h-[2px] bg-racing-orange w-12;
+  }
+}
+
+/* Kinetic Scrolling Effects */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
